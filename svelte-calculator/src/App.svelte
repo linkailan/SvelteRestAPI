@@ -27,36 +27,38 @@
 	  }
 	};
   </script>
-
-<main>
-  <h1>Svelte Calculator</h1>
-  <div class="calculator">
-    <input type="text" bind:value={expression} readonly="true" />
-    <div class="keypad">
-      <button on:click={() => handleInput("1")}>1</button>
-      <button on:click={() => handleInput("2")}>2</button>
-      <button on:click={() => handleInput("3")}>3</button>
-      <button on:click={() => handleInput("+")}>+</button>
-      <button on:click={() => handleInput("4")}>4</button>
-      <button on:click={() => handleInput("5")}>5</button>
-      <button on:click={() => handleInput("6")}>6</button>
-      <button on:click={() => handleInput("-")}>-</button>
-      <button on:click={() => handleInput("7")}>7</button>
-      <button on:click={() => handleInput("8")}>8</button>
-      <button on:click={() => handleInput("9")}>9</button>
-      <button on:click={() => handleInput("*")}>&times;</button>
-      <button on:click={() => handleInput("0")}>0</button>
-      <button on:click={() => clearExpression()}>C</button>
-      <button on:click={() => calculate()}>=</button>
-      <button on:click={() => handleInput("/")}>&divide;</button>
-    </div>
-	<div class="result">
-		<p>Result: {result.toString()}</p>
+  
+  <main>
+	<h1>Svelte Calculator</h1>
+	<div class="calculator">
+	  <input type="text" bind:value={expression} readonly="true"/>
+	  <div class="keypad">
+		<button on:click={() => handleInput("1")}>1</button>
+		<button on:click={() => handleInput("2")}>2</button>
+		<button on:click={() => handleInput("3")}>3</button>
+		<button on:click={() => handleInput("+")}>+</button>
+		<button on:click={() => handleInput("4")}>4</button>
+		<button on:click={() => handleInput("5")}>5</button>
+		<button on:click={() => handleInput("6")}>6</button>
+		<button on:click={() => handleInput("-")}>-</button>
+		<button on:click={() => handleInput("7")}>7</button>
+		<button on:click={() => handleInput("8")}>8</button>
+		<button on:click={() => handleInput("9")}>9</button>
+		<button on:click={() => handleInput("*")}>*</button>
+		<button on:click={() => handleInput("0")}>0</button>
+		<button on:click={() => handleInput(".")}>.</button>
+		<button on:click={() => clearExpression()}>C</button>
+		<button on:click={() => handleInput("/")}>/</button>
+		<button on:click={() => calculate()}>=</button>
 	  </div>
-  </div>
-</main>
-
-<style>
+	  
+	  <div class="result">
+		<p>Result: {result}</p>
+	  </div>
+	</div>
+  </main>
+  
+  <style>
 	main {
 	  font-family: Arial, sans-serif;
 	  display: flex;
@@ -97,5 +99,7 @@
 	.result {
 	  margin-top: 20px;
 	}
+	
+
   </style>
   
